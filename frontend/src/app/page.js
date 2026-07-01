@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-// Premium Timeline Step Component
+
 const TimelineStep = ({ num, title, state, desc, isLast }) => {
   const statusMap = {
     waiting: { dot: "bg-white/10 border-white/5", text: "text-white/40", title: "text-white/60", line: "bg-white/10" },
@@ -13,15 +13,14 @@ const TimelineStep = ({ num, title, state, desc, isLast }) => {
 
   return (
     <div className="relative pl-10 pb-10">
-      {/* The Timeline Line */}
+
       {!isLast && <div className={`absolute left-[11px] top-8 bottom-[-8px] w-[2px] rounded-full ${style.line} transition-all duration-700`} />}
-      
-      {/* The Dot */}
+ 
       <div className={`absolute left-0 top-1.5 w-[24px] h-[24px] rounded-full border-2 ${style.dot} transition-all duration-500 z-10 flex items-center justify-center bg-[#050508]`}>
         {state === 'done' && <span className="text-[10px] text-[#050508] font-bold">✓</span>}
       </div>
 
-      {/* Content */}
+
       <div className={`transition-all duration-500 ${state === 'waiting' ? 'opacity-60' : 'opacity-100'}`}>
         <div className="flex items-center gap-4 mb-1">
           <span className="font-mono text-[0.7rem] font-medium tracking-[0.2em] text-orange-500/80">{num}</span>
@@ -52,6 +51,7 @@ export default function ResearchMind() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ topic }),
       });
+      
       const data = await response.json();
       setResults(data.data);
       setPipelineState('done');
@@ -64,8 +64,7 @@ export default function ResearchMind() {
 
   return (
     <div className="relative min-h-screen selection:bg-orange-500/30 selection:text-white">
-      
-      {/* Premium Ambient Background Effects */}
+
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-orange-600/5 blur-[120px] mix-blend-screen" />
         <div className="absolute top-[20%] -right-[10%] w-[40vw] h-[40vw] rounded-full bg-[#ff4000]/5 blur-[120px] mix-blend-screen" />
@@ -87,18 +86,16 @@ export default function ResearchMind() {
           </p>
         </div>
 
-        {/* Main Interface */}
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          {/* Left Column: The Command Bar */}
+
           <div className="lg:col-span-7 pt-4">
             
-            {/* Glowing Command Input */}
             <div className="relative group mb-8">
-              {/* Outer glow that brightens on hover */}
+
               <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-[#ff4000] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-              
-              {/* Actual Input Container */}
+   
               <div className="relative flex items-center bg-[#0a0a0f]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl">
                 <input 
                   className="w-full bg-transparent text-white pl-6 py-4 outline-none text-[1.05rem] placeholder-white/30 font-light"
@@ -117,7 +114,7 @@ export default function ResearchMind() {
               </div>
             </div>
 
-            {/* Quick Suggestions */}
+
             <div className="flex gap-3 flex-wrap items-center">
               <span className="font-mono text-[0.65rem] text-white/40 tracking-[0.15em] mr-2 uppercase">Try exploring</span>
               {["Solid-state EV batteries", "CRISPR in agriculture", "Fusion net-energy"].map(ex => (
@@ -132,7 +129,7 @@ export default function ResearchMind() {
             </div>
           </div>
 
-          {/* Right Column: The Timeline */}
+
           <div className="lg:col-span-5 bg-white/[0.02] border border-white/5 rounded-3xl p-8 backdrop-blur-sm">
             <h3 className="font-mono text-[0.75rem] font-medium tracking-[0.2em] uppercase text-white/40 mb-10">
               Agent Activity
@@ -147,11 +144,11 @@ export default function ResearchMind() {
           </div>
         </div>
 
-        {/* Results Area */}
+
         {results && (
           <div className="mt-24 space-y-12 animate-in fade-in slide-in-from-bottom-12 duration-1000">
             
-            {/* Final Report Card */}
+
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-b from-white/10 to-transparent rounded-[2.5rem] blur opacity-50"></div>
               <div className="relative bg-[#0a0a0f]/80 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 md:p-16 shadow-2xl">
@@ -167,7 +164,7 @@ export default function ResearchMind() {
               </div>
             </div>
 
-            {/* Critic Feedback Card */}
+
             <div className="relative">
               <div className="relative bg-[#0a0a0f]/40 backdrop-blur-xl border border-white/5 rounded-[2rem] p-8 md:p-12">
                 <div className="flex items-center gap-4 mb-8 border-b border-white/5 pb-6">
