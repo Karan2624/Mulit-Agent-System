@@ -5,11 +5,15 @@ import os
 from pipeline import run_research_pipeline 
 
 app = FastAPI()
-origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
+
+origins_raw = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000")
+origins = [origin.strip() for origin in origins_raw.split(",")]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_methods=["*"],
+    allow_credentials=True, 
+    allow_methods=["*"],    
     allow_headers=["*"],
 )
 
