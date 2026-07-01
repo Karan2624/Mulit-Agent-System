@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #050508; 
+  --foreground: #e8e4dc;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 140, 50, 0.3);
+  color: #fff;
+}
+
+/* ── Premium Markdown Styling ── */
+.markdown-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #a1a1aa; /* Softer slate text */
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  font-family: 'Syne', sans-serif;
+  color: #f4f4f5;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.markdown-body h1 { font-size: 2.2rem; color: #ff8c32; }
+.markdown-body h2 { 
+  font-size: 1.5rem; 
+  border-bottom: 1px solid rgba(255,255,255,0.05); 
+  padding-bottom: 0.75rem; 
+}
+.markdown-body h3 { font-size: 1.25rem; }
+.markdown-body p { margin-bottom: 1.5rem; }
+.markdown-body strong { color: #f4f4f5; font-weight: 600; }
+.markdown-body ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+.markdown-body ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+.markdown-body li { margin-bottom: 0.5rem; padding-left: 0.5rem; }
+.markdown-body a { color: #ff8c32; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+.markdown-body a:hover { border-bottom-color: #ff8c32; }
+.markdown-body code { 
+  background: rgba(255,140,50,0.1); 
+  border: 1px solid rgba(255,140,50,0.2);
+  font-family: 'DM Mono', monospace; 
+  font-size: 0.85rem; 
+  padding: 0.2rem 0.4rem; 
+  border-radius: 6px; 
+  color: #ff8c32;
+}
+.markdown-body blockquote {
+  border-left: 2px solid #ff8c32;
+  margin: 2rem 0;
+  color: #a1a1aa;
+  font-style: italic;
+  background: linear-gradient(90deg, rgba(255,140,50,0.08) 0%, transparent 100%);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 12px 12px 0;
+}
